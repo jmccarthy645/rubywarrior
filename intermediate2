@@ -1,0 +1,16 @@
+
+class Player
+  def play_turn(warrior)
+    space_to_check = warrior.feel(warrior.direction_of_stairs)
+    if space_to_check.empty?  then
+      if warrior.health >= 20 then
+      warrior.walk!(warrior.direction_of_stairs)
+    else
+      warrior.rest!
+    end
+  else
+        warrior.attack! warrior.direction_of_stairs
+  end
+  end
+end
+  
